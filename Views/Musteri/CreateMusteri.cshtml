@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "CreateMusteri";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>CreateMusteri</h2>
+<br />
+<br />
+<form method="post" class="form-control">
+    <label>Musteri Adı</label>
+    <br />
+    <input type="text" name="MusteriAd" class="form-control" />
+    <label>Musteri Soyadı</label>
+    <br />
+    <input type="text" name="MusteriSoyad" class="form-control" />
+    <br />
+    <button class="btn btn-success" id="btn1" onclick="alert('Basarıyla Kaydedildi')">Ekle</button>
+
+    <script>
+        $('#btn1').click(function () {
+            alert('yeni müşteri eklendi..!');
+        });
+    </script>
+
+</form>
+

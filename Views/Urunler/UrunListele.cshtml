@@ -1,0 +1,60 @@
+﻿@model PagedList.IPagedList<MVC_Stok.Models.Entitiy.TblUrunler>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "UrunListele";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    var count = 0;
+}
+<div class="alert alert-success">
+    <h2>Urun Listesi</h2>
+</div>
+
+<br />
+<br />
+<table class="table table-bordered table-hover">
+    <tr class="alert alert-success">
+        <th>Urün No:</th>
+        <th>Urün Adı</th>
+        <th>Urün Marka</th>
+        <th>Urün Category</th>
+        <th>Urün Fiyat</th>
+        <th>Urün Stok</th>
+        <th>Urün Güncelle</th>
+        <th>Urün Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.UrunAd</td>
+            <td>@item.Marka</td>
+            <td>@item.Category</td>
+            <td>@item.Fiyat</td>
+            <td>@item.Stok</td>
+            <td><a href="/Urunler/UrunGüncelle/@item.UrunId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Urunler/UrunSil/@item.UrunId" class="btn btn-danger">Sil</a></td>
+        </tr>
+
+    }
+</table>
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("UrunListele", new { sayfa }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    {"page-link"}
+})
+
+<br />
+<br />
+<div class="alert alert-success">
+    <a href="/Urunler/UrunEkle/" class="btn btn-success">Yeni Urun Girişi</a>
+</div>
+<br />
+<br />
+
+
+
+
+

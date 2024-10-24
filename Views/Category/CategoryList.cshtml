@@ -1,0 +1,51 @@
+﻿@model PagedList.IPagedList<MVC_Stok.Models.Entitiy.TblCategory>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    var count = 0;
+}
+
+<div class="alert alert-success">
+    <h2>Kategori Listesi</h2>
+</div>
+<br />
+<br />
+
+<table class="table table-bordered table-hover">
+    <tr class="alert alert-success">
+        <th>Categori No:</th>
+        <th>Categori Adı</th>
+        <th>Categori Güncelle</th>
+        <th>Categori Sil</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td><b>@count</b></td>
+            <td>@item.CategoryAd</td>
+            <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+
+</table>
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("CategoryList", new { sayfa }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    {"page-link"}
+})
+<br />
+<br />
+<div class="alert alert-success">
+    <a href="/Category/CreateCategory/" class="btn btn-success">Yeni Kategory Girişi</a>
+</div>
+<br />
+<br />
+
+
+

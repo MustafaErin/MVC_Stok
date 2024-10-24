@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mvc Stok Programı</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            <a href="#" class="btn btn-dark"><h3>Mvc Stok</h3></a>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li><a href="/Category/CategoryList/" class="btn btn-dark">Categoriler</a></li>
+                    <li><a href="/Urunler/UrunListele/" class="btn btn-dark">Ürünler</a></li>
+                    <li><a href="/Musteri/MusteriList/" class="btn btn-dark">Müşteriler</a></li>
+                    <li><a href="/Satıs/index" class="btn btn-dark">Satışlar</a></li>
+                    <li><a href="#" class="btn btn-dark">Yardım</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container">
+                <p>Bütün Hakları Saklıdır</p>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

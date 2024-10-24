@@ -1,0 +1,38 @@
+﻿@model MVC_Stok.Models.Entitiy.TblUrunler
+@{
+    ViewBag.Title = "UrunGüncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Urun Güncelle</h2>
+
+
+<form method="post" class="form-control alert-success">
+
+    @Html.HiddenFor(x => x.UrunId, new { @class = "Form-control" })
+
+    <label><b>Ürün Adı</b></label>
+    <br />
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "Form-control" })
+    <br /><br />
+    <Label><b>Ürün Categorisi</b></Label>
+    <br />
+    @Html.TextBoxFor(x => x.Category, new { @class = "Form-control" })
+    <br /><br />
+    <Label><b>Ürün Fiyatı</b></Label>
+    <br />
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "Form-control" })
+    <br /><br />
+    <Label><b>Ürün Markası</b></Label>
+    <br />
+    @Html.TextBoxFor(x => x.Marka, new { @class = "Form-control" })
+    <br /><br />
+    <Label><b>Ürün Stok Adeti</b></Label>
+    <br />
+    @Html.TextBoxFor(x => x.Stok, new { @class = "Form-control" })
+    <br />
+    <br />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+</form>

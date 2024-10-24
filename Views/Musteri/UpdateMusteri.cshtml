@@ -1,0 +1,25 @@
+﻿@model MVC_Stok.Models.Entitiy.TblMusteri 
+@{
+    ViewBag.Title = "UpdateMusteri";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Musteri Güncelle</h2>
+
+<form method="post" class="form-control">
+
+    @Html.HiddenFor(x => x.MusteriId, new { @class = "Form-control" })
+    <label><b>Müşteri Adı</b></label>
+    <br />
+    @Html.TextBoxFor(x => x.MusteriAd, new { @class = "Form-control" })
+    <br /><br />
+    <Label><b>Müşteri Soyad</b></Label>
+    <br />
+    @Html.TextBoxFor(x => x.MusteriSoyad, new { @class = "Form-control" })
+    <br />
+    <br />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+</form>
+
